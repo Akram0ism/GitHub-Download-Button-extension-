@@ -1,0 +1,48 @@
+{
+  "manifest_version": 3,
+
+  "name": "GitHub Download Button",
+  "version": "1.1.0",
+
+  "description": "Download GitHub repositories, folders and individual files.",
+
+"icons": {
+  "16": "Assets/icon16.png",
+  "32": "Assets/icon32.png",
+  "48": "Assets/icon48.png",
+  "128": "Assets/icon128.png"
+},
+
+  "action": {
+  "default_title": "GitHub Downloader",
+
+  "default_icon": {
+    "16": "Assets/icon16.png",
+    "32": "Assets/icon32.png",
+    "48": "Assets/icon48.png",
+    "128": "Assets/icon128.png"
+  }
+},
+
+  "host_permissions": [
+    "https://api.github.com/*",
+    "https://raw.githubusercontent.com/*"
+  ],
+
+  "content_scripts": [
+    {
+      "matches": [
+        "https://github.com/*/*"
+      ],
+
+      "js": [
+        "jszip.min.js",
+        "content.js"
+      ],
+
+      "css": [
+        "style.css"
+      ]
+    }
+  ]
+}
